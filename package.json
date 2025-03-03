@@ -46,6 +46,7 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "@jest-mock/express": "^3.0.0",
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
