@@ -44,3 +44,7 @@ JWT_SECRET=sua-chave-secreta
    npm run start:dev
    ```
 4. A API estará disponível em `http://localhost:3000`
+
+## Arch Drawio
+
+<img src="./src/assets/arch.drawio.png">
