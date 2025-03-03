@@ -9,6 +9,7 @@ Este é o backend do PandaPlay, um serviço de streaming de vídeos desenvolvido
 - **Auth0** (Login via Google e email/senha)
 - **AWS S3** (Armazenamento de arquivos)
 - **WebSocket** (Chat em tempo real)
+- **Swagger** ([Documentação de endpoints](http://localhost:3000/api/#/))
 
 ## Configuração do Ambiente
 Antes de rodar o projeto, é necessário criar um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente:
