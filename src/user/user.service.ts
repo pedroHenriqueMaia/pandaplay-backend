@@ -18,11 +18,25 @@ export class UserService {
     return newUser.save();
   }
 
-  async findOrCreateGoogleUser(email: string, googleId: string): Promise<User> {
-    let user = await this.userModel.findOne({ email }).exec();
-    if (!user) {
-      user = new this.userModel({ email, googleId });
-      await user.save();
+  async findOrCreateGoogleUser(
+    email?: string,
+    googleId?: string,
+  ): Promise<User> {
+    let user!: User;
+    if (email) {
+      user = await this.userModel.findOne({ email }).exec();
+      if (!user) {
+        user = new this.userModel({ email });
+        await user.save();
+      }
+    }
+
+    if (googleId) {
+      user = await this.userModel.findOne({ googleId }).exec();
+      if (!user) {
+        user = new this.userModel({ googleId });
+        await user.save();
+      }
     }
     return user;
   }

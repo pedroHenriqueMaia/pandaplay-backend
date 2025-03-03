@@ -37,8 +37,9 @@ export class AuthController {
   @Get('google/callback')
   @UseGuards(GoogleAuthGuard)
   async googleCallback(@Req() req, @Res() res) {
-    const { email, googleId, access_token } = req.user;
-    await this.userService.findOrCreateGoogleUser(email, googleId);
+    console.log(res);
+    const { access_token } = req.user;
+    await this.userService.findOrCreateGoogleUser(undefined, access_token);
     res.redirect(`http://localhost:5173/callback?access_token=${access_token}`);
   }
 }
